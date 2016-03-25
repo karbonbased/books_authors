@@ -1,1 +1,48 @@
-<h1>INDEX AUTHORS PAGE </h1>
+<!DOCTYPE html>
+<html>
+<head>
+	<% include ../partials/head.ejs %>
+</head>
+<body>
+<h1>AUTHOR INDEX PAGE</h1>
+
+<section class="author-section">
+	    <% for (var i = 0; i < authors.length; i++) { %>
+
+	   
+	<div class="author-image">
+		<img src="<%=authors[i].image%>">
+
+	</div>
+	 <p>
+		<a href="/authors/<%=authors[i].id%>">
+
+	<%= authors[i].firstName %>
+
+<%= authors[i].lastName %>
+</a>
+<br>
+<% if (authors[i].alive == true) { %>
+Good news, this author isn't dead yet!
+<% } %>
+<% if (authors[i].alive == false) { %>
+Sorry, you'll never met this author at a book signing, because he dead.
+<% } %>
+<% } %>
+</p>
+</section> 
+	
+	<section id="create-author-section">
+		<h2>ADD A NEW AUTHOR</h2>
+			<form action="/authors" method="POST" id="create-author">
+				<input type="text" name="firstName" placeholder="FIRST NAME"><br>
+				<input type="text" name="lastName" placeholder="LAST NAME"><br>
+				<input type="text" name="image" placeholder="IMAGE URL"><br>
+				<input type="radio" name="alive" value="true"> LIVING<br>
+				<input type="radio" name="alive" value="false" checked=""> DEAD<br>
+			<button>CREATE</button>	
+	</section>
+
+
+</body>
+</html>

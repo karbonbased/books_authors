@@ -1,10 +1,11 @@
 {
   "name": "books_authors",
   "version": "1.0.0",
-  "description": "",
+  "description": "##Description",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
@@ -15,5 +16,14 @@
     "method-override": "^2.3.5",
     "mongoose": "^4.4.10",
     "morgan": "^1.7.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karbonbased/books_authors.git"
+  },
+  "bugs": {
+    "url": "https://github.com/karbonbased/books_authors/issues"
+  },
+  "homepage": "https://github.com/karbonbased/books_authors#readme"
 }

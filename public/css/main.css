@@ -1,0 +1,36 @@
+/*body {
+	background-color: red;
+}*/
+* {
+	margin: 0;
+	padding: 0;
+}
+section {
+	display: flex;
+	flex-direction: column;
+	margin-left: 4em;
+	justify-content: space-around;
+}
+
+.author-image img {
+	max-width: 300px;
+}
+
+#create-author-section {
+	margin-left: 4em;
+	margin-bottom: 2em;
+}
+
+#create-author-section h2 {
+	margin-top: 2em;
+}
+
+.book-section {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.book-image {
+	max-height: 150px;
+}

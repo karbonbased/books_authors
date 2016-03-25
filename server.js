@@ -7,9 +7,11 @@ var mongoose = require('mongoose');
 var port = process.env.PORT || 3000;
 var mongoUri = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/booksauthors';
 var logger = require('morgan');
+var methodOverride = require('method-override')
 
 var booksController = require('./controllers/booksController.js');
 var authorsController = require('./controllers/authorsController.js');
+var seedController = require('./controllers/seedController.js');
 
 // MIDDLEWARE //
 app.use(express.static('public'));
@@ -29,6 +31,12 @@ app.use(methodOverride(function(req, res){
 // ROUTING //
 app.use('/authors', authorsController);
 app.use('/books', booksController);
+app.use('/seed', seedController);
+
+// INDEX //
+app.get('/', function(req, res) {
+	res.render('index.ejs');
+})
 
 // CONNECTIONS //
 mongoose.connect(mongoUri);

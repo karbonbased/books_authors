@@ -1,1 +1,48 @@
-<h1>SHOW AUTHORS PAGE </h1>
+<!DOCTYPE html>
+<html>
+<head>
+	<% include ../partials/head.ejs %>
+</head>
+<body>
+<h1>AUTHOR SHOW PAGE</h1>
+<p>
+<div class="author-image">
+		<img src="<%=authors.image%>">
+
+	</div>
+<%= authors.firstName %>
+<%= authors.lastName %>	
+<br>
+<% if (authors.alive == true) { %>
+Good news, this author isn't dead yet!
+<% } %>
+<% if (authors.alive == false) { %>
+Sorry, you'll never met this author at a book signing, because he dead.
+<% } %>
+</p>
+	<section id="book-section">
+<% for(var i = 0; i < authors.books.length; i++) { %>
+			
+				
+					
+			<div class="books">
+			<p> <%= authors.books[i].title %></p>
+			<br>
+			<img class="book-image" src="<%=authors.books[i].image%>"><br>
+
+			</div>
+			<% } %>
+	</section>
+
+<section id="create-book">
+	<h2>ADD A BOOK TO THIS AUTHOR</h2>
+	<form action="/authors/<%=authors.id%>" method="POST" id="create-form">
+		<input type="text" name="titlt" placeholder="TITLE">
+		<input type="text" name="image" placeholder="IMAGE">
+		<button>CREATE</button>
+	</form>
+	<br/>	
+</section>
+
+</body>
+</html>

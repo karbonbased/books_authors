@@ -6,8 +6,9 @@ var authorSchema = mongoose.Schema({
 	firstName: String,
 	lastName: String,
 	alive: Boolean,
+	image: String,
 	books: [BookSchema],
-	dateCreated: { type:Date, default:Date.now },
+	dateCreated: { type:Date, default:Date.now }
 });
 
 var Author = mongoose.model('Author', authorSchema);
