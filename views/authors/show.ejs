@@ -4,15 +4,15 @@
 	<% include ../partials/head.ejs %>
 </head>
 <body>
-<h1>AUTHOR SHOW PAGE</h1>
+<% include ../partials/header.ejs %>
+
+<h1><%= authors.firstName %> 
+<%= authors.lastName %>	
+</h1>
 <p>
 <div class="author-image">
 		<img src="<%=authors.image%>">
-
 	</div>
-<%= authors.firstName %>
-<%= authors.lastName %>	
-<br>
 <% if (authors.alive == true) { %>
 Good news, this author isn't dead yet!
 <% } %>
@@ -20,6 +20,8 @@ Good news, this author isn't dead yet!
 Sorry, you'll never met this author at a book signing, because he dead.
 <% } %>
 </p>
+<br>
+<hr>
 	<section id="book-section">
 <% for(var i = 0; i < authors.books.length; i++) { %>
 			
@@ -37,11 +39,22 @@ Sorry, you'll never met this author at a book signing, because he dead.
 <section id="create-book">
 	<h2>ADD A BOOK TO THIS AUTHOR</h2>
 	<form action="/authors/<%=authors.id%>" method="POST" id="create-form">
-		<input type="text" name="titlt" placeholder="TITLE">
+		<input type="text" name="title" placeholder="TITLE">
 		<input type="text" name="image" placeholder="IMAGE">
 		<button>CREATE</button>
 	</form>
 	<br/>	
+</section>
+
+<section class="delete-author">
+WARNING: DANGER ZONE::: DELETE AUTHOR SECTION<br>
+		<span id="danger-zone">WARNING: DELETE AUTHOR ACTION IRREVOCABLE</span>
+			<form action="/authors/<%=authors.id%>?_method=DELETE" method="POST">
+				<input type="hidden" name="_method" value="DELETE">
+				<button id="delete-button">DELETE AUTHOR</button>
+			</form>
+		</section>
+	
 </section>
 
 </body>

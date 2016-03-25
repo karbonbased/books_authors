@@ -49,5 +49,15 @@ router.delete('/:id', function(req, res){
 	})
 })
 
+// UPDATE AUTHOR //
+router.put('/:id', function(req,res) {
+	// update the author document
+	Author.findByIdAndUpdate(req.params.id, req.body, {new: true}, function(err,author) {
+		console.log("author is " + author)
+		console.log("UPDATED!")
+		res.redirect('/authors')
+	});
+})
+
 
 module.exports = router;

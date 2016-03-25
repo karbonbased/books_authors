@@ -4,6 +4,23 @@
 	<% include ../partials/head.ejs %>
 </head>
 <body>
-<h1>BOOK INDEX PAGE</h1>
+<% include ../partials/header.ejs %>
+<h1>BOOKS</h1>
+
+<section class="book-section">
+	    <% for (var i = 0; i < books.length; i++) { %>
+
+	   
+	<div id="book-image">
+	<a href="/books/<%= books[i].id %>">
+		<img src="<%=books[i].image%>">
+		</a>
+
+	</div>
+<% } %>
+</section> 
+
+	
+
 </body>
 </html>

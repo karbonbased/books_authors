@@ -4,6 +4,21 @@
 	<% include ../partials/head.ejs %>
 </head>
 <body>
-<h1>BOOK SHOW PAGE</h1>
+<% include ../partials/header.ejs %>
+<h1><%= books.title %></h1>
+
+
+<img src="<%= books.image %>">
+
+
+<section class="delete-book">
+WARNING: DANGER ZONE::: DELETE BOOK SECTION<br>
+		<span id="danger-zone">WARNING: DELETE BOOK ACTION IRREVOCABLE</span>
+			<form action="/books/<%=books.id%>?_method=DELETE" method="POST">
+				<input type="hidden" name="_method" value="DELETE">
+				<button id="delete-button">DELETE BOOK</button>
+			</form>
+		</section>
+
 </body>
 </html>

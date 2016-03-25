@@ -13,6 +13,7 @@ router.get('/', function(req, res) {
 
 
 
+
 // // JSON //
 // router.get('/json', function(req, res) {
 //     Book.find({}, function(err, json) {
@@ -21,12 +22,20 @@ router.get('/', function(req, res) {
 // });
 
 
-// // SHOW //
-// router.get('/:id', function(req, res) {
-//     Book.findById(req.params.id, function(err, books) {
-//     res.render('books/show.ejs', {books: books});
-//     });
-// });
+// SHOW //
+router.get('/:id', function(req, res) {
+    Book.findById(req.params.id, function(err, books) {
+    res.render('books/show.ejs', {books: books});
+    });
+});
+
+
+// DELETE //
+router.delete('/:id', function(req, res){
+	Book.findByIdAndRemove(req.params.id, function(err, data){
+		res.redirect('/books')
+	})
+})
 
 
 // UPDATE //
