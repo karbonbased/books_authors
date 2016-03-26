@@ -12,23 +12,18 @@
 
 	   
 	<div class="author-image">
+		<a href="/authors/<%=authors[i].id%>">
 		<img src="<%=authors[i].image%>">
 
 	</div>
 	 <p>
-		<a href="/authors/<%=authors[i].id%>">
+		
 
 	<%= authors[i].firstName %>
 
 <%= authors[i].lastName %>
 </a>
 <br>
-<% if (authors[i].alive == true) { %>
-Good news, this author isn't dead yet!
-<% } %>
-<% if (authors[i].alive == false) { %>
-Sorry, you'll never met this author at a book signing, because he dead.
-<% } %>
 <% } %>
 </p>
 </section> 
