@@ -5,20 +5,27 @@
 </head>
 <body>
 <% include ../partials/header.ejs %>
-<h1>BOOKS</h1>
+<h1>BOOKS COLLECTION</h1>
 
-<section class="book-section">
-	    <% for (var i = 0; i < books.length; i++) { %>
+<section id="scroll" class="flexcroll flexcrollactive">
+	<div id="scroll_mcontentwrapper" class="mcontentwrapper">
+		<div id="scroll_contentwrapper" class="contentwrapper">
+			<ul>
+				<% for (var i = 0; i < books.length; i++) { %>
+				<li>
+					<a href="/books/<%= books[i].id %>">
+						<img src="<%=books[i].image%>">
 
-	   
-	<div id="book-image">
-	<a href="/books/<%= books[i].id %>">
-		<img src="<%=books[i].image%>">
-		</a>
-
+					</a>
+				</li>
+				<% } %>
+			</ul>
+			
+		</div>
 	</div>
-<% } %>
+
 </section> 
+
 
 	
 
