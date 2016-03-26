@@ -49,6 +49,13 @@ router.delete('/:id', function(req, res){
 	})
 })
 
+// EDIT ROUTE //
+router.get('/:id/edit', function(req,res){
+	Author.findById(req.params.id, function(err, authors) {
+	res.render('authors/edit.ejs', {authors: authors})
+	});
+})
+
 // UPDATE AUTHOR //
 router.put('/:id', function(req,res) {
 	// update the author document
