@@ -4,6 +4,26 @@
 	<% include ../partials/head.ejs %>
 	</head>
 <body>
+<% include ../partials/header.ejs %>
+<h1>EDIT 
+<%= authors.firstName %> 
+<%= authors.lastName %>	 </h1>
+
+
+	
+	<section id="create-author-section">
+		<h2>EDIT <%= authors.lastName %></h2>
+			<form action="/authors/<%= authors.id %>?_method=PUT" method="POST" id="edit-author">
+				<input type="hidden" name="_method" value="PUT">
+				FIRSTNAME:<input type="text" name="firstName" value="<%= authors.firstName %> " placeholder="FIRST NAME"><br>
+				LASTNAME:<input type="text" name="lastName" value="<%= authors.lastName %>" placeholder="LAST NAME"><br>
+				IMAGE URL:<input type="text" name="image" value="<%= authors.image %>" placeholder="IMAGE URL"><br>
+				<input type="radio" name="alive" value="true"> LIVING<br>
+				<input type="radio" name="alive" value="false" checked=""> DEAD<br>
+			<button alert="ARE YOU SURE?">EDIT</button>	
+	</section>
+
+
 
 </body>
 </html>
