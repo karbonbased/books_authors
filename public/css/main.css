@@ -16,7 +16,17 @@ h1, h2, h3 {
 }
 
 h1 {
-	padding-top: 1em;
+	padding-top: 2.2em;
+}
+
+a {
+	text-decoration: none;
+	color: white
+}
+
+a:hover {
+	font-weight: 500;
+
 }
 
 nav {
@@ -44,6 +54,29 @@ nav a:hover {
 
 #header {
 margin-top: 50px;
+}
+
+.image {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+}
+
+.image div {
+	flex: auto;
+	margin: 1.2vw;
+	border: 1px solid rgba(255,255,255,0.8);
+}
+
+/*.image div:hover {
+	border: 5px solid red;
+}*/
+
+
+.intro-pic {
+	width: 100%; 
+  height: auto;
 }
 
 
@@ -75,10 +108,114 @@ section {
 	justify-content: space-around;
 }
 
+
+button {
+	padding: 4px;
+}
+
+button:hover {
+	background-color: red;
+	cursor: progress;
+}
+
+.scroll_wrapper {
+	width: 100%;
+	white-space: nowrap;
+	overflow-x: auto;
+	overflow-y: hidden;
+	-webkit-overflow-scrolling: touch;
+	-ms-overflow-style: none; 
+}
+
+.scroll_wrapper::-webkit-scrollbar {
+	display: none;
+}
+
 .book-image {
+	display: inline-flex;
 	max-height: 150px;
 }
 
 #book-image img {
 	max-height: 450px;
+}
+
+/*SCROLL BAR*/
+#scroll {
+width:650px;
+height:250px;
+margin:100px auto;
+background:#858C90;
+border:2px solid #000;
+overflow:auto;
+box-shadow:0 0 10px #000;
+}
+#scroll ul {
+float:left;
+margin-right:-999em;
+white-space:nowrap;
+list-style:none;
+}
+#scroll li {
+margin:15px;
+text-align:center;
+float:left;
+display:inline;           
+}
+#scroll img {
+border:0;
+display:block;
+border:1px solid rgba(239,229,255,0.7);
+max-height: 200px;
+}
+#scroll a:active img, #scroll a:focus img, #scroll a:hover img {
+border:1px solid #000;
+}
+#scroll a {
+text-decoration:none;
+font-weight:bold;
+color:#000;
+}
+#scroll a:active, #scroll a:focus, #scroll a:hover {
+color:#FFF;
+}
+#scroll span {
+padding:5px 0 0;
+display:block;
+}
+/* ------------- Flexcroll CSS ------------ */
+.scrollgeneric {
+line-height:1px;
+font-size:1px;
+position:absolute;
+top:0;left:0;
+}
+.hscrollerbase {
+height:17px;
+background:#A3CBE0;
+}
+.hscrollerbar {
+height:12px;
+background:#000;
+cursor:e-resize;
+padding:3px;
+border:1px solid #A3CBE0;
+}
+.hscrollerbar:hover {
+background:#222;
+border:1px solid #222;
+}
+
+/*MORE*/
+
+section .edit-auth {
+	margin-left:0;
+}
+.edit-auth {
+	padding: 2em;
+	background-color: hsl(180, 60%, 10%);
+	margin-left:0em;
+}
+button #edit-button {
+	margin: 1em;
 }
